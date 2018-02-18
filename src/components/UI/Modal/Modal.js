@@ -5,7 +5,7 @@ import Aux from '../../../hoc/Aux/Aux';
 
 class Modal extends Component{
       shouldComponentUpdate(nextProps, nextState){
-            return nextProps.show !== this.props.show;
+            return nextProps.show !== this.props.show || nextProps.children !== this.props.children;
       }
       componentWillUpdate(){
             console.log('MODAL SUMMARY UPDATES')
@@ -21,12 +21,13 @@ class Modal extends Component{
             }}>
          {this.props.children}
       </div>
+
       </Aux>
             )
       }
 }
 
-   export default Modal;
+export default Modal;
 
 
 
